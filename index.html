@@ -23,14 +23,28 @@
         <li>💻 Technik & Computer</li>
       </ul>
 
-<audio autoplay loop>
-    <source src="musik.mp3" type="audio/mpeg">
-    Dein Browser unterstützt keine Audio-Wiedergabe.
-  </audio>
+ <!-- Musik -->
+      <button id="musikButton">🎧 Musik starten</button>
+      <audio id="musik" loop>
+        <source src="musik.mp3" type="audio/mpeg">
+      </audio>
 
-      <button onclick="zeigeNachricht()">Drück Mich !</button>
+      <button onclick="zeigeNachricht()">Drück Mich!</button>
     </div>
 
-    <script src="script.js"></script>
-</body>
+    <script>
+      const musik = document.getElementById('musik');
+      const musikButton = document.getElementById('musikButton');
+
+      musikButton.addEventListener('click', () => {
+        if (musik.paused) {
+          musik.play();
+          musikButton.textContent = '⏸️ Musik pausieren';
+        } else {
+          musik.pause();
+          musikButton.textContent = '🎧 Musik starten';
+        }
+      });
+    </script>
+  </body>
 </html>
