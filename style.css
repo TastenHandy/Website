@@ -1,37 +1,48 @@
-body {
-  background: linear-gradient(to bottom right, #7a3f3f, #8b5151);
-  font-family: "Segoe UI", sans-serif;
-  color: #000000;
-  text-align: center;
+/* Vollbild schwarzer Hintergrund mit Text in der Mitte */
+body, html {
   margin: 0;
   padding: 0;
+  height: 100%;
+  background: black;
+  color: white;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
 }
 
-.container {
-  max-width: 600px;
-  margin: 80px auto;
-  background: rgba(65, 30, 30, 0.404);
-  padding: 30px;
-  border-radius: 70px;
-  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
-}
-
-.profilbild {
-  border-radius: 50%;
-  margin: 20px 0;
-}
-
-button {
-  background-color: #ff00dd;
-  color: #333;
-  border: none;
-  padding: 10px 25px;
-  border-radius: 8px;
+#intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
   cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
+  transition: opacity 1s ease;
 }
 
-button:hover {
-  background-color: #00ff22;
+#intro h1 {
+  font-size: 1.5rem;
+  opacity: 0.8;
+  animation: blink 1.5s infinite;
+}
+
+/* kleiner blink-effekt */
+@keyframes blink {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.3; }
+}
+
+/* Hauptseite */
+#main {
+  text-align: center;
+  padding-top: 100px;
+  animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }

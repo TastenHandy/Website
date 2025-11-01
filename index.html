@@ -1,50 +1,38 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Leck Eier
-    </title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1>Mein Name Noah 👋</h1>
-      <img src="Profilbild.png" alt="Profilbild" class="profilbild" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Intro-Bildschirm -->
+  <div id="intro">
+    <h1>click to enter...</h1>
+  </div>
 
-      <p>
-        Ich spiel gerne an Mamis :) 
-      </p>
+  <!-- Hauptseite (zuerst versteckt) -->
+  <div id="main" style="display: none;">
+    <h2>Hey, ich bin Noah 👋</h2>
+    <p>Willkommen auf meiner Webseite!</p>
+  </div>
 
-      <h2>Meine Interessen:</h2>
-      <ul>
-        <li>🎮 Zocken (CoD ist kacke)</li>
-        <li>🎵 Musik hören / 06, 069 chooo</li>
-        <li>💻 Technik & Computer</li>
-      </ul>
+  <!-- Hintergrundmusik -->
+  <audio id="bgMusic" loop>
+    <source src="musik.mp3" type="audio/mpeg">
+  </audio>
 
- <!-- Musik -->
-      <button id="musikButton">🎧 Musik starten</button>
-      <audio id="musik" autoplay loop>
-        <source src="musik.mp3" type="audio/mpeg">
-      </audio>
+  <script>
+    const intro = document.getElementById("intro");
+    const main = document.getElementById("main");
+    const music = document.getElementById("bgMusic");
 
-      <button onclick="zeigeNachricht()">Drück Mich!</button>
-    </div>
-
-    <script>
-      const musik = document.getElementById('musik');
-      const musikButton = document.getElementById('musikButton');
-
-      musikButton.addEventListener('click', () => {
-        if (musik.paused) {
-          musik.play();
-          musikButton.textContent = '⏸️ Musik pausieren';
-        } else {
-          musik.pause();
-          musikButton.textContent = '🎧 Musik starten';
-        }
-      });
-    </script>
-  </body>
+    intro.addEventListener("click", () => {
+      intro.style.display = "none";     // Intro ausblenden
+      main.style.display = "block";     // Hauptseite zeigen
+      music.play();                     // Musik starten
+    });
+  </script>
+</body>
 </html>
