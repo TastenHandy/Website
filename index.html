@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+    <div class="stars"></div>
+
   <!-- Intro-Bildschirm -->
   <div id="intro">
     <h1>click to enter...</h1>
@@ -38,10 +41,13 @@
     const main = document.getElementById("main");
     const music = document.getElementById("bgMusic");
 
-    intro.addEventListener("click", () => {
-      intro.style.display = "none";     // Intro ausblenden
-      main.style.display = "block";     // Hauptseite zeigen
-      music.play();                     // Musik starten
+  intro.addEventListener("click", () => {
+      intro.classList.add("fade-out");   // sanft ausblenden
+      setTimeout(() => {
+        intro.style.display = "none";
+        main.style.display = "flex";     // Hauptseite zeigen
+        music.play();                    // Musik starten
+      }, 1000); // 1 Sekunde Fade-Übergang
     });
   </script>
 </body>
