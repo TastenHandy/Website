@@ -61,29 +61,48 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at top, #0a0a0a 0%, #000 100%);
   animation: fadeIn 2s ease;
   font-family: "Segoe UI", sans-serif;
   color: #000;
   overflow-y: auto;
   z-index: 2;
   text-align: center;
-  padding: 40px;
 }
 
+/* Neon-Container */
 .container {
-  max-width: 600px auto;
-  margin: 80px auto;
-  background: rgba(179, 47, 47, 0.404);
-  padding: 30px;
-  border-radius: 70px;
-  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid #00ffff; /* Neon-Farbe */
+  border-radius: 25px;
+  box-shadow: 0 0 20px #00ffff, 0 0 60px #00ffff, 0 0 100px #00ffff;
+  padding: 30px 50px;
+  text-align: center;
+  color: #00ffff;
+  max-width: 500px;
+  backdrop-filter: blur(10px); /* leichtes Glas-Feeling */
+  transition: all 0.3s ease;
 }
 
+/* Hover-Effekt: mehr Glow */
+.container:hover {
+  box-shadow: 0 0 30px #00ffff, 0 0 80px #00ffff, 0 0 150px #00ffff;
+  transform: scale(1.02);
+}
+
+/* Profilbild schön rund + Neon-Effekt */
 .profilbild {
   border-radius: 50%;
-  margin: 20px 0;
+  width: 150px;
+  border: 3px solid #00ffff;
+  box-shadow: 0 0 20px #00ffff;
+  margin-bottom: 20px;
 }
+
+/* Überschriften und Text */
+h2, h3, p, ul, li {
+  color: #00ffff;
+}
+
 
 button {
   background-color: #ff00dd;
@@ -100,9 +119,10 @@ button:hover {
   background-color: #00ff22;
 }
 
+/* Animation (dezent) */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 
