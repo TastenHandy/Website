@@ -10,12 +10,10 @@
 
     <div class="stars"></div>
 
-  <!-- Intro-Bildschirm -->
   <div id="intro">
     <h1>click to enter...</h1>
   </div>
 
-  <!-- Hauptseite (zuerst versteckt) -->
   <div id="main" style="display: none;">
     <div class="container">
       <h2>Mein Name Noah 👋</h2>
@@ -32,7 +30,6 @@
         <li>💻 Technik & Computer</li>
       </ul>
 
-  <!-- Hintergrundmusik -->
   <audio id="bgMusic" loop>
     <source src="musik.mp3" type="audio/mpeg">
   </audio>
@@ -43,12 +40,12 @@
     const music = document.getElementById("bgMusic");
 
   intro.addEventListener("click", () => {
-      intro.classList.add("fade-out");   // sanft ausblenden
+      intro.classList.add("fade-out");   
       setTimeout(() => {
         intro.style.display = "none";
-        main.style.display = "flex";     // Hauptseite zeigen
-        music.play();                    // Musik starten
-      }, 1000); // 1 Sekunde Fade-Übergang
+        main.style.display = "flex";     
+        music.play();                    
+      }, 1000); 
     }); 
   </script>
 </body>
