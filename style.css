@@ -63,7 +63,6 @@ body, html {
   align-items: center;
   justify-content: center;
   animation: fadeIn 2s ease;
-  background: linear-gradient(to bottom right, #a8a8a8, #1b1b1b);
   font-family: "Segoe UI", sans-serif;
   color: #000;
   overflow-y: auto;
